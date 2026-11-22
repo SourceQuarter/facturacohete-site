@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7C3AED">
+  <title>FacturaCohete — Facturación y contabilidad</title>
+  <meta name="description" content="FacturaCohete: facturación y contabilidad en un solo lugar para pequeñas empresas, profesionales independientes y sus contadores.">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <style>
+    :root { --violet: #7C3AED; --violet-dark: #5B21B6; --violet-light: #EDE9FE; --orange: #FDBA74; --ink: #0F172A; --muted: #475569; --line: #E2E8F0; --soft: #F8F7FF; --bg: #FFFFFF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.6; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--ink); text-decoration: none; }
+    .nav { display: flex; gap: 20px; font-size: 15px; }
+    .nav a { color: var(--muted); text-decoration: none; }
+    .nav a:hover { color: var(--ink); }
+    .hero { text-align: center; padding: 56px 0 48px; }
+    .pill { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--violet-dark); background: var(--violet-light); border-radius: 999px; padding: 5px 14px; margin-bottom: 20px; }
+    h1 { margin: 0 auto 16px; max-width: 760px; font-size: clamp(32px, 6vw, 50px); line-height: 1.12; letter-spacing: -0.03em; }
+    h2 { margin: 0 0 8px; font-size: clamp(24px, 4vw, 32px); letter-spacing: -0.02em; line-height: 1.2; }
+    .lead { margin: 0 auto 28px; max-width: 620px; color: var(--muted); font-size: 19px; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .cta { display: inline-block; background: var(--violet); color: #fff; font-weight: 600; text-decoration: none; border-radius: 10px; padding: 14px 28px; font-size: 17px; }
+    .cta:hover { background: var(--violet-dark); }
+    .ghost { display: inline-block; color: var(--violet-dark); font-weight: 600; text-decoration: none; border: 1px solid var(--line); border-radius: 10px; padding: 13px 24px; font-size: 17px; }
+    .ghost:hover { border-color: var(--violet); }
+    .note { margin-top: 14px; font-size: 14px; color: var(--muted); }
+    section.block { padding: 48px 0; }
+    .sub { margin: 0 0 24px; color: var(--muted); font-size: 17px; max-width: 640px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .card { border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--bg); }
+    .card h3 { margin: 0 0 6px; font-size: 17px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .who { text-align: center; color: var(--muted); margin: 0 0 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; align-items: center; }
+    .who span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: 14px; color: var(--ink); }
+    .three { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .three .card { padding: 28px 24px; }
+    .icon { font-size: 28px; margin-bottom: 8px; }
+    .band { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start; }
+    ul.checks { list-style: none; margin: 0; padding: 0; }
+    ul.checks li { position: relative; padding-left: 28px; margin-bottom: 12px; }
+    ul.checks li::before { content: ""; position: absolute; left: 0; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--violet-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%235B21B6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat; }
+    ul.checks li strong { display: block; }
+    ul.checks li span { color: var(--muted); font-size: 15px; }
+    .final { text-align: center; padding: 56px 0; }
+    footer { text-align: center; padding: 24px 16px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+    footer a { color: var(--violet-dark); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 560px) { .nav { display: none; } .hero { padding-top: 32px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"> FacturaCohete</a>
+      <nav class="nav">
+        <a href="#contadores">Contadores</a>
+        <a href="https://app.facturacohete.com">Demo</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <span class="pill">Acceso anticipado</span>
+      <h1>Facturación y contabilidad, simple.</h1>
+      <p class="lead">Facturá, cobrá y tené tus libros al día, todo en un solo lugar.</p>
+      <div class="actions">
+        <a class="cta waitlist" href="#">Unirme a la lista</a>
+        <a class="ghost" href="https://app.facturacohete.com">Ver la demo</a>
+      </div>
+      <p class="note">Gratis durante el acceso anticipado.</p>
+    </section>
+  </div>
+
+  <section class="block" id="negocios">
+    <div class="wrap">
+      <p class="who">Para <span>independientes</span><span>profesionales</span><span>agencias</span><span>pequeñas empresas</span><span>contadores</span></p>
+      <div class="grid three">
+        <div class="card"><div class="icon">🧾</div><h3>Facturá rápido</h3><p>Creá una factura en segundos y enviala por WhatsApp o correo con un enlace.</p></div>
+        <div class="card"><div class="icon">⏰</div><h3>Cobrá a tiempo</h3><p>Recordatorios automáticos a tus clientes para que no tengás que perseguir a nadie.</p></div>
+        <div class="card"><div class="icon">📊</div><h3>Contabilidad sin esfuerzo</h3><p>Cada factura y gasto queda registrado en tus libros. Siempre sabés cómo va tu negocio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block band" id="contadores">
+    <div class="wrap split">
+      <div>
+        <span class="pill">Para contadores</span>
+        <h2>Todos tus clientes en una sola cuenta.</h2>
+        <p class="sub">Gratis para contadores. Tus clientes facturan; vos recibís los libros al día.</p>
+        <a class="cta waitlist" href="#">Acceso para contadores</a>
+      </div>
+      <ul class="checks">
+        <li><strong>Cambiá de cliente en un clic</strong><span>Un solo inicio de sesión, sin compartir contraseñas.</span></li>
+        <li><strong>Libros que se llenan solos</strong><span>Facturas y gastos llegan ya registrados.</span></li>
+        <li><strong>Revisá y cerrá el mes</strong><span>Ajustes, reportes y cierre de periodo.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Empezá gratis</h2>
+      <p class="sub" style="margin: 0 auto 24px;">Sumate a la lista de acceso anticipado.</p>
+      <a class="cta waitlist" href="#">Unirme a la lista</a>
+    </div>
+  </section>
+
+  <footer>
+    Un producto de <a href="https://sourcequarter.com">Source Quarter</a> · © Source Quarter LLC
+  </footer>
+
+  <script>
+    // Enlace del formulario de la lista de espera (p. ej. Tally) antes del lanzamiento.
+    const WAITLIST_URL = "#";
+    document.querySelectorAll(".waitlist").forEach(a => { a.href = WAITLIST_URL; });
+  </script>
+</body>
+</html>
